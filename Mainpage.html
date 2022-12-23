@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <title>부산 사대부고 정보통</title>
+    <link rel="stylesheet" type="text/css" href="Mainpage_CSS"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="allbox">
+        <div class="schoolpic"><img class="logo" src="https://school.busanedu.net/images/web/schl/pnu-h/main/logo.png"
+                alt="부산대학교사범대학부설고등학교"></div>
+
+        <div class="flexfather">
+            <div class="meal">
+                <b>급식표</b>
+                <a href="동아리 급식표 더보기.html">
+                    <svg s="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="foodmore">
+
+                        <path
+                            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.568 18.005l-1.414-1.415 4.574-4.59-4.574-4.579 1.414-1.416 5.988 5.995-5.988 6.005z" />
+
+                    </svg>
+                </a>
+                <hr>
+                <b>중식</b>
+                <br>
+                <p id="lunch"></p>
+                <hr>
+                <b>석식</b>
+                <br>
+                <p id="dinner"></p>
+            </div>
+
+            <div class="sjplanflex">
+                <div class="subjectplan">
+                    <b>시간표</b>
+                    <form>
+                        <select id="Grade" onchange="changeFn()" class="sjplanfont">
+                            <option selected>선택</option>
+                            <option value="1">1학년</option>
+                            <option value="2">2학년</option>
+                            <option value="3">3학년</option>
+                        </select>
+                    </form>
+                    <form>
+                        <select id="Class" onchange="changeFn2()" class="sjplanfont">
+                            <option selected>선택</option>
+                            <option value="1">1반</option>
+                            <option value="2">2반</option>
+                            <option value="3">3반</option>
+                            <option value="4">4반</option>
+                            <option value="5">5반</option>
+                            <option value="6">6반</option>
+                            <option value="7">7반</option>
+                            <option value="8">8반</option>
+                            <option value="9">9반</option>
+                        </select>
+                    </form>
+                </div>
+                <div style="margin-top: 10px;">
+                    <table style="margin-left:auto;margin-right:auto">
+                        <table border="1" bordercolor="black" style="table-layout: fixed">
+                            <th id="GC_" align="center" class="sjplanfont"></th>
+                            <th align="center">월요일</th>
+                            <th align="center">화요일</th>
+                            <th align="center">수요일</th>
+                            <th align="center">목요일</th>
+                            <th align="center">금요일</th>
+                            <tr align="center" class="sjplanfont">
+                                <td>1교시</td>
+                                <td id="Mon1_"></td>
+                                <td id="Tue1_"></td>
+                                <td id="Wen1_"></td>
+                                <td id="Tur1_"></td>
+                                <td id="Fri1_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>2교시</td>
+                                <td id="Mon2_"></td>
+                                <td id="Tue2_"></td>
+                                <td id="Wen2_"></td>
+                                <td id="Tur2_"></td>
+                                <td id="Fri2_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>3교시</td>
+                                <td id="Mon3_"></td>
+                                <td id="Tue3_"></td>
+                                <td id="Wen3_"></td>
+                                <td id="Tur3_"></td>
+                                <td id="Fri3_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>4교시</td>
+                                <td id="Mon4_"></td>
+                                <td id="Tue4_"></td>
+                                <td id="Wen4_"></td>
+                                <td id="Tur4_"></td>
+                                <td id="Fri4_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>5교시</td>
+                                <td id="Mon5_"></td>
+                                <td id="Tue5_"></td>
+                                <td id="Wen5_"></td>
+                                <td id="Tur5_"></td>
+                                <td id="Fri5_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>6교시</td>
+                                <td id="Mon6_"></td>
+                                <td id="Tue6_"></td>
+                                <td id="Wen6_"></td>
+                                <td id="Tur6_"></td>
+                                <td id="Fri6_"></td>
+                            </tr>
+                            <tr align="center" class="sjplanfont">
+                                <td>7교시</td>
+                                <td id="Mon7_"></td>
+                                <td id="Tue7_"></td>
+                                <td id="Wen7_"></td>
+                                <td id="Tur7_"></td>
+                                <td id="Fri7_"></td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+
+            <div class="schoolplan">
+                <b>학사일정</b>
+                <hr>
+                <b>사대부고 횃불제</b>
+
+            </div>
+
+        </div>
+    </div>
+<script src="Mainpage_JS"></script>
+</body>
