@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="C:\Users\dkak1\Desktop\동애리\favicon.ico">
+    <title>부산 사대부고 알리미</title>
+    <style>
+        .flexfather {
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        .flexfather {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .meal {
+            margin: auto;
+            top: 300px;
+            text-align: left;
+            box-shadow: 2px 2px 15px grey;
+            border-radius: 10px;
+            padding: 15px;
+            width: 20%;
+            min-width: 300px;
+            max-width: 370px;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        .schoolpic {
+            display: flex;
+            justify-content: center;
+        }
+
+        hr {
+
+            border: 0px;
+            border-top: 1px solid;
+        }
+
+        b {
+            font-family: 'GangwonEdu_7';
+            font-size: 1.2em;
+        }
+
+        p {
+            font-family: 'Pretendard_4'
+        }
+
+        @font-face {
+            font-family: 'GangwonEdu_7';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Pretendard_4';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            background: var(--button-bg-color);
+            color: var(--button-color);
+
+            margin: 0;
+            padding: 0.5rem 1rem;
+
+            font-family: 'Pretendard_4';
+            font-size: 1rem;
+            font-weight: 400;
+            text-align: center;
+            text-decoration: none;
+
+            border: none;
+            border-radius: 4px;
+
+            display: inline-block;
+            width: auto;
+
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+            cursor: pointer;
+
+            transition: 0.5s;
+        }
+
+        button:active,
+        button:hover,
+        button:focus {
+            background: var(--button-hover-bg-color);
+            outline: 0;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+        }
+
+        :root {
+            --button-color: #ffffff;
+            --button-bg-color: #0d6efd;
+            --button-hover-bg-color: #025ce2;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="C:\Users\dkak1\Desktop\동애리\12.24\Mainpage.html">
+        <div class="schoolpic"><img class="logo" src="https://school.busanedu.net/images/web/schl/pnu-h/main/logo.png"
+                alt="부산대학교사범대학부설고등학교"></div>
+    </a>
+    <div class="flexfather">
+        <div class="meal">
+            <b id="b"></b>
+            <input value="2022-12-27" type="date" onchange="changeFn()" id="inputdate_">
+            <button onclick="Action()">검색!</button>
+            <hr>
+            <b>중식</b>
+            <br>
+            <p id="lunch"></p>
+            <hr>
+            <b>석식</b>
+            <br>
+            <p id="dinner"></p>
+            <p>칸이 비어있다면 해당 급식은 없거나 오류입니다!</p>
+            <p>1.난류2.우유 3.메밀4.땅콩5.대두6.밀7.고등어8.게9.새우 10.돼지고기11.복숭아12.토마토13.아황산염 14.호두 15.닭고기 16.쇠고기
+                17.오징어 18.조개류(굴,전복,홍합포함) 19.잣</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.js"
+            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="C:\Users\dkak1\Desktop\동애리\12.24\Subpage_JS.js"></script>
+</body>
