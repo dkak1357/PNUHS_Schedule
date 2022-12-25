@@ -1,4 +1,0 @@
-$ touch .gitignore
-$ echo "apikey.js" >> .gitignore
-$ cat .gitignore
-apikey.js
