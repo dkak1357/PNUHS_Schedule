@@ -50,10 +50,7 @@
             font-family: 'Pretendard_4'
         }
 
-        b {
-            font-family: 'GangwonEdu_7';
-            font-size: 1.2em;
-        }
+        
 
         img {
             margin: 20px;
@@ -110,6 +107,10 @@
         }
         .screensize{
             display: none;
+        }
+        b {
+            font-family: 'GangwonEdu_7';
+            font-size: 1.2em;
         }
         
     </style>
