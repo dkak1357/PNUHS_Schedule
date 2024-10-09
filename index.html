@@ -57,7 +57,9 @@
         <p>현재 오류로 시스템 점검 중입니다. 곧 다시 찾아뵙겠습니다!</p>
         <p>기간: 24년 10월 9일 00:35 ~ 무기한</p>
         <div id="whatday"></div>
-        <div id="menu"></div>
+        <div id="menu1"></div>
+        <div id="menu2"></div>
+        <div id="state"></div>
     </div>
 </body>
 <script>
@@ -77,9 +79,9 @@
         KEY: '',
         Type: 'json',
         ATPT_OFCDC_SC_CODE: 'C10',  // 시도교육청 코드
-        SD_SCHUL_CODE: '7005103',   // 학교 코드
+        SD_SCHUL_CODE: '7005103',   // 학교 코드 2 중식 3 석식
         MMEAL_SC_CODE: '',         // 선택: 식사 코드
-        MLSV_YMD: year+""+month+""+date,       // 선택: 급식 일자
+        MLSV_YMD: year + "" + month + "" + date,       // 선택: 급식 일자  year+""+month+""+date
 
     };
 
@@ -88,17 +90,28 @@
     fetch(`${url}?${queryString}`)
         .then(response => response.json())
         .then(data => {
-            menu.insertAdjacentHTML(
-                "afterbegin",
-                `<h3>저녁</h3>
-                <p>${data.mealServiceDietInfo[1].row[1].DDISH_NM}</p>`
-            );
-            menu.insertAdjacentHTML(
+            console.log(data)
+            if (data?.mealServiceDietInfo?.[0]?.head?.[1]?.RESULT?.CODE == "INFO-000") {
+                state.insertAdjacentHTML(
+                    "afterbegin",
+                    `<span>정상적으로 데이터를 불러왔습니다.</span>`);
+            } else {
+                state.insertAdjacentHTML(
+                    "afterbegin",
+                    `<span>급식 데이터가 없거나 오류입니다.</span>`);
+            }
+            menu1.insertAdjacentHTML(
                 "afterbegin",
                 `<h3>점심</h3>
                 <p>${data.mealServiceDietInfo[1].row[0].DDISH_NM}</p>`
             );
+            menu2.insertAdjacentHTML(
+                "afterbegin",
+                `<h3>저녁</h3>
+                <p>${data.mealServiceDietInfo[1].row[1].DDISH_NM}</p>`
+            );
         })
+
     whatday.insertAdjacentHTML(
         "afterbegin",
         `<h2>${month}월${date}일 급식표</h2>`
