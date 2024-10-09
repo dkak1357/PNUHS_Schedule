@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,12 +49,60 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="maintenance-icon">🛠️</div>
         <h1>점검 중입니다</h1>
         <p>현재 오류로 시스템 점검 중입니다. 곧 다시 찾아뵙겠습니다!</p>
         <p>기간: 24년 10월 9일 00:35 ~ 무기한</p>
+        <div id="whatday"></div>
+        <div id="menu"></div>
     </div>
 </body>
+<script>
+    let today = new Date(); // 오늘 날짜
+    let year = today.getFullYear(); // 년도
+    var month = today.getMonth() + 1; // 월 (10 미만시에 0 추가)
+    if (month < 10) {
+        month = "0" + month;
+    }
+    var date = today.getDate(); // 일 (10 미만시에 0 추가)
+    if (date < 10) {
+        date = "0" + date;
+    }
+
+    const url = 'https://open.neis.go.kr/hub/mealServiceDietInfo';
+    const params = {
+        KEY: '',
+        Type: 'json',
+        ATPT_OFCDC_SC_CODE: 'C10',  // 시도교육청 코드
+        SD_SCHUL_CODE: '7005103',   // 학교 코드
+        MMEAL_SC_CODE: '',         // 선택: 식사 코드
+        MLSV_YMD: year+""+month+""+date,       // 선택: 급식 일자
+
+    };
+
+    const queryString = new URLSearchParams(params).toString();
+
+    fetch(`${url}?${queryString}`)
+        .then(response => response.json())
+        .then(data => {
+            menu.insertAdjacentHTML(
+                "afterbegin",
+                `<h3>저녁</h3>
+                <p>${data.mealServiceDietInfo[1].row[1].DDISH_NM}</p>`
+            );
+            menu.insertAdjacentHTML(
+                "afterbegin",
+                `<h3>점심</h3>
+                <p>${data.mealServiceDietInfo[1].row[0].DDISH_NM}</p>`
+            );
+        })
+    whatday.insertAdjacentHTML(
+        "afterbegin",
+        `<h2>${month}월${date}일 급식표</h2>`
+    );
+</script>
+
 </html>
